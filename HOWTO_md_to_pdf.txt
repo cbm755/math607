@@ -1,0 +1,11 @@
+How to convert cbm's lecture notes to PDF
+=========================================
+
+1)  Get pandoc
+
+2)  todo
+
+???
+
+3)  profit
+
