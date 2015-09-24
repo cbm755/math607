@@ -22,7 +22,29 @@ Downsides of Newton's Method: need derivative info, and additional
 smoothness.  Convergence usually not guaranteed unless "sufficiently
 close": not **robust**.
 
+Quadratic convergence of Newton's method (by Frederic Paquin-Lefebvbre)
+-----------------------------------------------------------------------
 
+Let $e_k = x_k-y$, where $y$ is a root of a smooth function $f(x)$. If we pick the initial guess $x_0$ sufficiently close to the root $y$, then the convergence is guaranteed. We look for a constant $\alpha$ such that for large $k$, the following relation between successive errors is satisfied $e_{k+1} = \lambda e_k^\alpha$. For the derivation, we recall that Newton's method is a fixed point method with iteration function being $g(x) = x - f(x)/f'(x)$. This specific function has the additional property that its derivative vanishes at the root $y$ (one can easily verify it).
+
+\begin{equation*}
+|e_{k+1}| = |x_{k+1} - y| = |g(x_k) - g(y)|
+\end{equation*}
+
+The term $g(x_k) = g(y + e_k)$ on the righthand side can be Taylor expanded up to the second derivative of $f$.
+
+\begin{align*}
+|e_{k+1}| &= |g(y) + g'(y)e_k + \frac{1}{2}g''(\xi_k)e_k^2 - g(y)| \\
+&= |\frac{1}{2}g''(\xi_k)e_k^2| \\
+\end{align*}
+
+Therefore, we have that
+
+\begin{equation*}
+\lim {k \to \infty} \frac{|e_{k+1}|}{|e_k^2|} = |\frac{1}{2}g''(y)|.
+\end{equation*}
+
+The convergence will be quadratic, unless the second derivative of the fixed point function $g(x)$ vanishes at the zero (which may happen for roots with multiplicity greater than 1).
 
 Systems
 -------
