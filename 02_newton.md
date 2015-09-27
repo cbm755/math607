@@ -10,8 +10,10 @@ Rooting Finding
 
 Iterative techniques for solving $f(x) = 0$ for $x$.
 
-*Bisection*: start with an interval $[a, b]$ bracketing the root.
-Evaluate the midpoint.  Replace one end, maintaining a root bracket.
+*Bisection*: start with an interval $[a, b]$ bracketing the root such that $f(a)f(b)<0$
+From the Intermediate Value Theorem, there must be at least one root in $[a, b]$.
+Let $x_1=\frac{a+b}{2}$. Replace one of the endpoints (a or b) with $x_1$,maintaing a root bracket.
+Repeat this until it satisfies some error tolerance.
 Linear convergence.  Slow but **robust**.
 
 *Newton's Method*: $x_{k+1} = x_k - f(x_k) / f'(x_k)$.  Faster,
