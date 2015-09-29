@@ -133,7 +133,7 @@ Root-finding
 Bisection and Newton's method.
 
 Convergence rates:
-  - linearly
+  - linear
   - superlinear
   - quadratic
 
