@@ -7,7 +7,13 @@ cbm@math.ubc.ca
 
 office: LSK 303c
 
-office hours: TBA
+office hours: 
+
+ &nbsp;&nbsp;&nbsp;&nbsp;Monday 12:15 - 13:00, Thursday 10:00 - 11:00, Friday 12:30 - 13:45
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;(subject to change)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;Also by appointment
 
 - go over outline
 
