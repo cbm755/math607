@@ -45,3 +45,11 @@ plot(x, u - uex, 'kx', 'linewidth', 3);
 xlabel('x'); ylabel('error');
 legend('error vector')
 grid on
+
+
+%% Can also look at stability
+% two-norm of the matrix inverse: seems bounded while changing h...
+norm_inv = norm(inv(full(Dxx)),2)
+% ... because the smallest-in-magnitude eigenvalue of Dxx if
+% bounded away from zero (in fact close to pi^2 as in lecture)
+min_eigval = min(abs(eig(full(Dxx))))
