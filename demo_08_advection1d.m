@@ -15,8 +15,8 @@ grid on
 
 % Sparse matrices for finite differences
 N = length(x);  e = ones(N,1);
-Db = spdiags([-e  e], [-1 0], N, N);
-Df = spdiags([-e  e], [0  1], N, N);
+Db = spdiags([-e  e], [-1 0], N, N);  % backward
+Df = spdiags([-e  e], [0  1], N, N);  % forward
 Db(1,end) = -1;   % periodic BCs
 Df(end,1) = 1;
 Db = 1/h * Db;
@@ -33,6 +33,7 @@ for n=1:numsteps
   % Try these two first:
   %vnew = v + k*(-a*(Db*v));
   %vnew = v + k*(-a*(Df*v));
+  % upwinding...
   vnew = v + k*(-a*(...
       (a > 0)*(Db*v) + (a <= 0)*(Df*v) ));
   v = vnew;
@@ -40,4 +41,3 @@ for n=1:numsteps
   drawnow
   %pause
 end
-
